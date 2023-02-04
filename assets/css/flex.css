@@ -1,0 +1,130 @@
+/*========== HEADER SECTION ==========*/
+
+.menu {
+	display: flex;
+	justify-content: space-evenly;
+	/*Ira dividir os elementos com espaços iguais entre si de maneira responsiva*/
+	align-items: center;
+	flex-wrap: wrap;
+	/*Quando não tiver mais espaço dentro do container para os items, essa propriedade fara com que os elementos sejam jogados para baixo*/
+	column-gap: 33px;
+}
+
+/*========== CATEGORY SECTION ==========*/
+
+.categorias__lista {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.destaques {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+}
+
+.destaques__barra {
+	flex-grow: 1;
+}
+
+/*========== EVENT and SCHEDULE SECTION ==========*/
+
+.eventos__lista,
+.agenda__lista {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	justify-content: center;
+}
+
+.eventos__item,
+.agenda__item {
+	flex-grow: 1;
+	max-width: 400px;
+}
+
+.agenda,
+.eventos div {
+	text-align: center;
+}
+
+.agenda__botao,
+.eventos div {
+	padding-block-start: 1rem;
+	display: block;
+}
+
+/*========== FOOTER SECTION ==========*/
+
+.rodape {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 1.5rem;
+}
+
+.rodape__logo {
+	align-self: flex-end;
+}
+
+/*========== MEDIA QUERIES ==========*/
+
+@media (min-width: 720px) {
+	/*===== HEADER SECTION =====*/
+	.menu {
+		column-gap: 75px;
+	}
+
+	/*===== CATEGORY SECTION =====*/
+	.categorias__lista {
+		flex-wrap: wrap;
+		column-gap: 1.633rem;
+		row-gap: 1rem;
+	}
+
+	/*===== EVENT SECTION =====*/
+
+	.eventos__lista,
+	.agenda__item {
+		justify-content: end;
+	}
+
+	.agenda {
+		text-align: end;
+	}
+
+	.agenda__botao,
+	.eventos div {
+		padding-block-start: 1.5rem;
+	}
+}
+
+@media (min-width: 1440px) {
+	.menu {
+		column-gap: 100px;
+		flex-wrap: nowrap;
+	}
+
+	/*Com a propriedade order eu posso mudar a ordem que os meus elementos aparecem na pagina, caso tenham o display:flex*/
+
+	.menu__item:nth-child(1) {
+		order: 1;
+	}
+
+	.menu__item:nth-child(2) {
+		order: 3;
+	}
+
+	.menu__item:nth-child(3) {
+		order: 4;
+	}
+
+	.menu__item:nth-child(4) {
+		order: 5;
+	}
+
+	.menu__item:nth-child(5) {
+		order: 2;
+	}
+}
